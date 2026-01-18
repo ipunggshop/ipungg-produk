@@ -10,29 +10,31 @@
   --bg2: #171b26;
   --text: #dcdcdc; /* font putih gelap */
   --muted: #a5adc6;
-  --accent1: #ffa500; /* tombol oranye */
-  --accent2: #e69500;
+  --accent: #ffa500; /* tombol oranye */
   --border: #262a39;
 }
 
 body {
-  margin: 0;
+  margin:0;
   font-family: 'Segoe UI', Roboto, sans-serif;
   background: radial-gradient(circle at top left, var(--bg2), var(--bg1) 70%);
   color: var(--text);
-  line-height: 1.65;
-  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-.container { max-width: 980px; margin: 60px auto; padding: 20px; }
+.container {
+  max-width: 980px;
+  margin: 60px auto;
+  padding: 20px;
+}
 
 .card {
   background: rgba(23,27,38,0.9);
   border-radius:18px;
-  box-shadow:0 0 40px rgba(255,255,255,0.15);
   border:1px solid var(--border);
+  box-shadow:0 0 40px rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
   overflow:hidden;
-  backdrop-filter:blur(12px);
 }
 
 header {
@@ -58,58 +60,68 @@ header p { margin:4px 0; opacity:.95; font-weight:bold; }
   display:inline-block;
   margin:15px 10px 0 0;
   padding:10px 18px;
-  background:linear-gradient(90deg,var(--accent2),var(--accent1));
+  background:linear-gradient(90deg, #e69500, #ffa500);
   color:white;
   border-radius:12px;
   font-weight:bold;
   text-decoration:none;
-  box-shadow:0 0 15px var(--accent1);
-  transition:0.2s ease;
+  box-shadow:0 0 15px var(--accent);
+  transition: all 0.3s ease;
 }
-.info-btn:hover { transform:translateY(-2px); box-shadow:0 0 25px var(--accent1); }
+.info-btn:hover { transform: translateY(-2px); box-shadow:0 0 25px var(--accent); }
 
 .content { padding:40px 30px; }
-h2 { color:var(--accent2); border-left:4px solid var(--accent2); padding-left:10px; margin-bottom:20px; }
+h2 { color:var(--accent); border-left:4px solid var(--accent); padding-left:10px; margin-bottom:20px; font-weight:bold; }
 
 .product {
-  background: rgba(20,25,40,0.8);
+  background: rgba(20,25,40,0.85);
   border-radius:14px;
-  padding:18px;
+  padding:20px;
   border:1px solid var(--border);
   text-align:left;
   font-weight:bold;
   color:inherit;
   text-shadow:none;
-  margin-bottom:20px;
+  margin-bottom:25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.product:hover { transform: translateY(-3px); box-shadow:0 0 15px var(--accent); }
 
 .product ul { padding-left:20px; margin-top:10px; }
 .product ul li { margin-bottom:6px; }
 
-.price { color: var(--accent1); font-weight:bold; margin-top:6px; }
+.price { color: var(--accent); font-weight:bold; margin-top:8px; }
 
 .order-btn {
   display:block;
   margin:15px 0 0 0;
   padding:12px 24px;
-  background:var(--accent1);
+  background: var(--accent);
   color:#111;
   text-align:center;
   font-weight:bold;
   border-radius:12px;
   text-decoration:none;
-  box-shadow:none;
-  transition:all 0.2s ease;
+  box-shadow:0 0 10px var(--accent);
+  transition: all 0.3s ease;
 }
 .order-btn:hover {
   transform:translateY(-2px);
-  box-shadow:0 0 10px var(--accent1);
+  box-shadow:0 0 20px var(--accent);
 }
 
-footer { text-align:center; padding:25px; border-top:1px solid var(--border); background:#11141e; color:var(--muted); font-size:.9rem; }
+footer {
+  text-align:center;
+  padding:25px;
+  border-top:1px solid var(--border);
+  background:#11141e;
+  color:var(--muted);
+  font-size:.9rem;
+}
 </style>
 </head>
 <body>
+
 <div class="container">
   <div class="card">
     <header>
@@ -181,5 +193,6 @@ footer { text-align:center; padding:25px; border-top:1px solid var(--border); ba
   </div>
   <footer>© 2026 <strong>IPUNGG SHOP</strong> 👩‍💻</footer>
 </div>
+
 </body>
-</html>
+  </html>
